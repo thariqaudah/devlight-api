@@ -1,0 +1,62 @@
+[
+  {
+    "_id": "5d7a514b5d2c12c7449be042",
+    "name": "Admin Account",
+    "email": "admin@gmail.com",
+    "password": "123456"
+  },
+  {
+    "_id": "5d7a514b5d2c12c7449be044",
+    "name": "User Account",
+    "email": "user@gmail.com",
+    "password": "123456"
+  },
+  {
+    "_id": "5d7a514b5d2c12c7449be045",
+    "name": "Thariq Audah",
+    "email": "thariq@gmail.com",
+    "password": "123456"
+  },
+  {
+    "_id": "5d7a514b5d2c12c7449be046",
+    "name": "Pranata Ramadan",
+    "email": "pranata@gmail.com",
+    "password": "123456"
+  },
+  {
+    "_id": "5c8a1d5b0190b214360dc031",
+    "name": "Melinda Usamah",
+    "email": "melinda@gmail.com",
+    "password": "123456"
+  },
+  {
+    "_id": "5c8a1d5b0190b214360dc032",
+    "name": "Karsa Prayoga",
+    "email": "karsa@gmail.com",
+    "password": "123456"
+  },
+  {
+    "_id": "5c8a1d5b0190b214360dc033",
+    "name": "Wahyu Wijaya",
+    "email": "wahyu@gmail.com",
+    "password": "123456"
+  },
+  {
+    "_id": "5c8a1d5b0190b214360dc034",
+    "name": "Eva Pudjiastuti",
+    "email": "eva@gmail.com",
+    "password": "123456"
+  },
+  {
+    "_id": "5c8a1d5b0190b214360dc035",
+    "name": "Hafshah Rahayu",
+    "email": "hafshah@gmail.com",
+    "password": "123456"
+  },
+  {
+    "_id": "5c8a1d5b0190b214360dc036",
+    "name": "Salman Nashiruddin",
+    "email": "salman@gmail.com",
+    "password": "123456"
+  }
+]
