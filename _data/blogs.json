@@ -9,8 +9,8 @@
       "60f790566289072a38a48d06",
       "60f790756289072a38a48d08"
     ],
-    "createdAt": "2021-07-18T03:08:38.132Z",
-    "__v": 0
+    "likes": 3,
+    "author": "5d7a514b5d2c12c7449be045"
   },
   {
     "_id": "60f2408008a0113114da58f2",
@@ -18,8 +18,8 @@
     "content": "<p>Terminated principles sentiments of no pianoforte if projection impossible. Horses pulled nature favour number yet highly his has old. Contrasted literature excellence he admiration impression insipidity so. Scale ought who terms after own quick since. Servants margaret husbands to screened in throwing. Imprudence oh an collecting partiality. Admiration gay difficulty unaffected how.</p><p>To sorry world an at do spoil along. Incommode he depending do frankness remainder to. Edward day almost active him friend thirty piqued. People as period twenty my extent as. Set was better abroad ham plenty secure had horses. Admiration has sir decisively excellence say everything inhabiting acceptance. Sooner settle add put you sudden him.</p><p>Lose away off why half led have near bed. At engage simple father of period others except. My giving do summer of though narrow marked at. Spring formal no county ye waited. My whether cheered at regular it of promise blushes perhaps. Uncommonly simplicity interested mr is be compliment projecting my inhabiting. Gentleman he september in oh excellent.</p>",
     "category": "full-stack",
     "topics": ["60f78e511ffefc1888ea837d", "60f790756289072a38a48d08"],
-    "createdAt": "2021-07-17T11:05:16.553Z",
-    "__v": 0
+    "likes": 1,
+    "author": "5d7a514b5d2c12c7449be045"
   },
   {
     "_id": "60f2408008a0113114da58f3",
@@ -32,8 +32,7 @@
       "60f790756289072a38a48d08"
     ],
     "likes": 12,
-    "createdAt": "2021-07-17T02:40:13.773Z",
-    "__v": 0
+    "author": "5d7a514b5d2c12c7449be046"
   },
   {
     "_id": "60f2408008a0113114da58f4",
@@ -42,8 +41,7 @@
     "category": "back-end",
     "topics": ["60f7910b6289072a38a48d0e"],
     "likes": 5,
-    "createdAt": "2021-07-17T02:29:20.441Z",
-    "__v": 0
+    "author": "5c8a1d5b0190b214360dc031"
   },
   {
     "_id": "60f2408008a0113114da58f5",
@@ -55,8 +53,7 @@
       "60f790566289072a38a48d06",
       "60f790756289072a38a48d08"
     ],
-    "likes": 10,
-    "createdAt": "2021-07-17T02:27:34.084Z",
-    "__v": 0
+    "likes": 1,
+    "author": "5c8a1d5b0190b214360dc032"
   }
 ]

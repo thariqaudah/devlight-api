@@ -61,15 +61,13 @@ exports.createBlog = asyncHandler(async (req, res, next) => {
   // Add author to req.body
   req.body.author = req.user;
 
-  const topics = req.body.topics;
-
-  // Check if no topics
-  if (!topics) {
-    return next(new ErrorResponse(`Please add the topics for your blog`, 400));
+  // Check if no topics in req.body
+  if (!req.body.topics) {
+    return next(new ErrorResponse(`Please add topics for your blog`, 400));
   }
 
   // Check for maximum topic to add
-  if (topics.length > process.env.MAX_BLOG_TOPICS) {
+  if (req.body.topics.length > process.env.MAX_BLOG_TOPICS) {
     return next(
       new ErrorResponse(
         `You can add topics for your blog up to ${process.env.MAX_BLOG_TOPICS}`,
@@ -170,6 +168,13 @@ exports.searchBlogs = asyncHandler(async (req, res, next) => {
 exports.photoUpload = asyncHandler(async (req, res, next) => {
   let blog = await Blog.findById(req.params.id);
 
+  // Check if blog is exist
+  if (!blog) {
+    return next(
+      new ErrorResponse(`Blog with id ${req.params.id} is not found`, 404)
+    );
+  }
+
   // Check the ownership of the blog
   if (blog.author.toString() !== req.user.id) {
     return next(
@@ -177,13 +182,6 @@ exports.photoUpload = asyncHandler(async (req, res, next) => {
         `User with ID ${req.user.id} is not authorize to update this blog`,
         403
       )
-    );
-  }
-
-  // Check if blog is exist
-  if (!blog) {
-    return next(
-      new ErrorResponse(`Blog with id ${req.params.id} is not found`, 404)
     );
   }
 
@@ -213,8 +211,7 @@ exports.photoUpload = asyncHandler(async (req, res, next) => {
 
   // Create path of uploaded file
   const customFileName = `photo_${blog.id}${path.parse(file.name).ext}`;
-  const uploadPath = `${process.env.FILE_UPLOAD_PATH}/${customFileName}`;
-  console.log(customFileName, uploadPath);
+  const uploadPath = `${process.env.FILE_UPLOAD_PATH}/blogs/${customFileName}`;
 
   // Proceeds to upload the file
   file.mv(uploadPath, async (err) => {
@@ -242,3 +239,60 @@ exports.photoUpload = asyncHandler(async (req, res, next) => {
     }
   });
 });
+
+// // Custom helper for upload file
+// const uploadFile = async (req, blog, next) => {
+//   // Check if file is uploaded
+//   if (!req.files || Object.keys(req.files).length === 0) {
+//     return next(new ErrorResponse(`Please select a file to upload`, 400));
+//   }
+
+//   const file = req.files.file;
+
+//   // Check if file is image type
+//   if (!file.mimetype.startsWith('image')) {
+//     return next(
+//       new ErrorResponse(`Please select an image file (eg. jpg, jpeg, png)`, 400)
+//     );
+//   }
+
+//   // Check if file is greater than 1 MB
+//   if (file.size > process.env.FILE_MAX_SIZE) {
+//     return next(
+//       new ErrorResponse(
+//         `File size can not be greater than ${process.env.FILE_MAX_SIZE} bytes`,
+//         400
+//       )
+//     );
+//   }
+
+//   // Create path of uploaded file
+//   const customFileName = `photo_${blog.id}${path.parse(file.name).ext}`;
+//   const uploadPath = `${process.env.FILE_UPLOAD_PATH}/blogs/${customFileName}`;
+
+//   // Proceeds to upload the file
+//   file.mv(uploadPath, async (err) => {
+//     if (err) {
+//       console.log(err);
+//       return next(new ErrorResponse('File failed to upload', 500));
+//     }
+
+//     try {
+//       blog = await Blog.findByIdAndUpdate(
+//         req.params.id,
+//         {
+//           cover: customFileName,
+//         },
+//         { new: true, runValidators: true }
+//       );
+
+//       res.status(200).json({
+//         success: true,
+//         data: blog.cover,
+//       });
+//     } catch (err) {
+//       console.log(err);
+//       next(err);
+//     }
+//   });
+// }

@@ -2,64 +2,50 @@
   {
     "_id": "60f78e511ffefc1888ea837d",
     "name": "Javascript",
-    "description": "JavaScript is one of the core technologies of the World Wide Web. Over 97% of websites use it client-side for web page behavior, often incorporating third-party libraries. All major web browsers have a dedicated JavaScript engine to execute the code on the user's device.",
-    "createdAt": "2021-07-21T03:02:41.965Z",
-    "__v": 0
+    "description": "JavaScript is one of the core technologies of the World Wide Web. Over 97% of websites use it client-side for web page behavior, often incorporating third-party libraries."
   },
   {
     "_id": "60f790566289072a38a48d06",
     "name": "PHP",
-    "description": "PHP is a general-purpose scripting language geared towards web development. It was originally created by Danish-Canadian programmer Rasmus Lerdorf in 1994. The PHP reference implementation is now produced by The PHP Group.[8] PHP originally stood for Personal Home Page, but it now stands for the recursive initialism PHP: Hypertext Preprocessor.",
-    "createdAt": "2021-07-21T03:11:18.216Z",
-    "__v": 0
+    "description": "PHP is a general-purpose scripting language geared towards web development. It was originally created by Danish-Canadian programmer Rasmus Lerdorf in 1994. The PHP reference implementation is now produced by The PHP Group.[8] PHP originally stood for Personal Home Page, but it now stands for the recursive initialism PHP: Hypertext Preprocessor."
   },
   {
     "_id": "60f790756289072a38a48d08",
     "name": "Python",
-    "description": "Python is an interpreted high-level general-purpose programming language. Python's design philosophy emphasizes code readability with its notable use of significant indentation. Its language constructs as well as its object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects.",
-    "createdAt": "2021-07-21T03:11:49.130Z",
-    "__v": 0
+    "description": "Python is an interpreted high-level general-purpose programming language. Python's design philosophy emphasizes code readability with its notable use of significant indentation. Its language constructs as well as its object-oriented approach aim to help programmers write clear, logical code for small and large-scale projects."
   },
   {
     "_id": "60f790a96289072a38a48d0a",
     "name": "Ruby",
-    "description": "Ruby is an interpreted, high-level, general-purpose programming language. It was designed and developed in the mid-1990s by Yukihiro Matsumoto in Japan.",
-    "createdAt": "2021-07-21T03:12:41.390Z",
-    "__v": 0
+    "description": "Ruby is an interpreted, high-level, general-purpose programming language. It was designed and developed in the mid-1990s by Yukihiro Matsumoto in Japan."
   },
   {
     "_id": "60f790d66289072a38a48d0c",
     "name": "ReactJS",
-    "description": "React (also known as React.js or ReactJS) is a free and open-source front-end JavaScript library for building user interfaces or UI components. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile applications. However, React is only concerned with state management and rendering that state to the DOM, so creating React applications usually requires the use of additional libraries for routing, as well as certain client-side functionality.",
-    "createdAt": "2021-07-21T03:13:26.219Z",
-    "__v": 0
+    "description": "React (also known as React.js or ReactJS) is a free and open-source front-end JavaScript library for building user interfaces or UI components. It is maintained by Facebook and a community of individual developers and companies. React can be used as a base in the development of single-page or mobile applications. However, React is only concerned with state management and rendering that state to the DOM, so creating React applications usually requires the use of additional libraries for routing, as well as certain client-side functionality."
   },
   {
     "_id": "60f7910b6289072a38a48d0e",
     "name": "Vue.js",
-    "description": "Vue.js (commonly referred to as Vue) is an open-source model–view–viewmodel front end JavaScript framework for building user interfaces and single-page applications. It was created by Evan You, and is maintained by him and the rest of the active core team members",
-    "createdAt": "2021-07-21T03:14:19.513Z",
-    "__v": 0
+    "description": "Vue.js (commonly referred to as Vue) is an open-source model–view–viewmodel front end JavaScript framework for building user interfaces and single-page applications. It was created by Evan You, and is maintained by him and the rest of the active core team members"
   },
   {
     "_id": "60f791226289072a38a48d10",
     "name": "Bootstrap",
-    "description": "Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. It contains CSS- and JavaScript-based design templates for typography, forms, buttons, navigation, and other interface components.",
-    "createdAt": "2021-07-21T03:14:42.794Z",
-    "__v": 0
+    "description": "Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. It contains CSS- and JavaScript-based design templates for typography, forms, buttons, navigation, and other interface components."
   },
   {
     "_id": "60f791346289072a38a48d12",
     "name": "HTML",
-    "description": "The HyperText Markup Language, or HTML is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.",
-    "createdAt": "2021-07-21T03:15:00.176Z",
-    "__v": 0
+    "description": "The HyperText Markup Language, or HTML is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript."
   },
   {
     "_id": "60f791446289072a38a48d14",
     "name": "CSS",
-    "description": "Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language such as HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.",
-    "createdAt": "2021-07-21T03:15:16.058Z",
-    "__v": 0
+    "description": "Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language such as HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript."
+  },
+  {
+    "_id": "60f791446289072a38a48d15",
+    "name": "Others"
   }
 ]

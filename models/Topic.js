@@ -10,7 +10,6 @@ const topicSchema = new mongoose.Schema(
     },
     description: {
       type: String,
-      maxLength: 250,
     },
     createdAt: {
       type: Date,

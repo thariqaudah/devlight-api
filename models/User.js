@@ -19,6 +19,10 @@ const userSchema = new mongoose.Schema(
         'Please add a valid email address',
       ],
     },
+    bio: {
+      type: String,
+      maxLength: [255, 'Max length for bio is 255 chars'],
+    },
     role: {
       type: String,
       enum: ['user'],
