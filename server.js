@@ -16,7 +16,6 @@ connectDb();
 
 // Load route files
 const blogsRoute = require('./routes/blogs');
-const topicsRoute = require('./routes/topics');
 const authRoute = require('./routes/auth');
 const usersRoute = require('./routes/users');
 const commentsRoute = require('./routes/comments');
@@ -41,7 +40,6 @@ app.use(cookieParser());
 
 // Mounting routes
 app.use('/api/v1/blogs', blogsRoute);
-app.use('/api/v1/topics', topicsRoute);
 app.use('/api/v1/auth', authRoute);
 app.use('/api/v1/users', usersRoute);
 app.use('/api/v1/comments', commentsRoute);

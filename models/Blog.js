@@ -13,9 +13,10 @@ const blogSchema = new mongoose.Schema({
   },
   category: {
     type: String,
+    required: [true, 'Please add a category for the blog'],
     enum: ['front-end', 'back-end', 'full-stack'],
-    required: [true, 'Please add category for this blog'],
   },
+  tags: [String],
   cover: {
     type: String,
     default: 'no-photo.jpg',
@@ -26,13 +27,6 @@ const blogSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-  topics: [
-    {
-      type: mongoose.Types.ObjectId,
-      required: true,
-      ref: 'Topic',
-    },
-  ],
   author: {
     type: mongoose.Types.ObjectId,
     required: true,

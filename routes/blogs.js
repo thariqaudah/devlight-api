@@ -24,7 +24,7 @@ router.use('/:blogId/comments', commentsRoute);
 
 router
   .route('/')
-  .get(advancedResult(Blog, { path: 'topics', select: 'name' }), getBlogs)
+  .get(advancedResult(Blog, { path: 'author', select: 'name' }), getBlogs)
   .post(protect, createBlog);
 router.route('/search').get(searchBlogs);
 router

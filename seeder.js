@@ -17,18 +17,12 @@ mongoose.connect(process.env.MONGO_URI, {
 
 // Load model
 const Blog = require('./models/Blog');
-const Topic = require('./models/Topic');
 const User = require('./models/User');
-// const Comment = require('./models/Comment');
+const Comment = require('./models/Comment');
 
 // Read JSON file
 const blogs = JSON.parse(
   fs.readFileSync(path.join(__dirname, '_data/blogs.json'), {
-    encoding: 'utf8',
-  })
-);
-const topics = JSON.parse(
-  fs.readFileSync(path.join(__dirname, '_data/topics.json'), {
     encoding: 'utf8',
   })
 );
@@ -47,7 +41,6 @@ const users = JSON.parse(
 const insertData = async () => {
   try {
     await Blog.create(blogs);
-    await Topic.create(topics);
     await User.create(users);
     // await Comment.create(comments);
     console.log('Data Inserted...'.green.inverse);
@@ -61,7 +54,6 @@ const insertData = async () => {
 const removeData = async () => {
   try {
     await Blog.deleteMany();
-    await Topic.deleteMany();
     await User.deleteMany();
     // await Comment.deleteMany();
     console.log('Data Destroyed...'.red.inverse);

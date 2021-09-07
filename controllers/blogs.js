@@ -2,38 +2,13 @@ const path = require('path');
 const ErrorResponse = require('../utils/ErrorResponse');
 const asyncHandler = require('../middlewares/async');
 const Blog = require('../models/Blog');
-const Topic = require('../models/Topic');
 
 // @desc      Get all blogs
 // @path      GET /api/v1/blogs
-// @path      GET /api/v1/topics/:topicId/blogs
+// @path      GET /api/v1/:tagName
 // @access    Public
 exports.getBlogs = asyncHandler(async (req, res, next) => {
-  if (req.params.topicId) {
-    const topic = await Topic.findById(req.params.topicId);
-
-    if (!topic) {
-      return next(
-        new ErrorResponse(
-          `Topic with id ${req.params.topicId} is not found`,
-          404
-        )
-      );
-    }
-
-    const blogs = await Blog.find({ topics: topic }).populate({
-      path: 'topics',
-      select: 'name',
-    });
-
-    res.status(200).json({
-      success: true,
-      count: blogs.length,
-      data: blogs,
-    });
-  } else {
-    res.status(200).json(res.advancedResult);
-  }
+  res.status(200).json(res.advancedResult);
 });
 
 // @desc      Get single blog
@@ -61,20 +36,12 @@ exports.createBlog = asyncHandler(async (req, res, next) => {
   // Add author to req.body
   req.body.author = req.user;
 
-  // Check if no topics in req.body
-  if (!req.body.topics) {
-    return next(new ErrorResponse(`Please add topics for your blog`, 400));
+  // Validate tags field (Maximum is 3 item)
+  if (req.body.tags.length > 3) {
+    return next(new ErrorResponse('Maximum tags for the blog is 3'), 400);
   }
 
-  // Check for maximum topic to add
-  if (req.body.topics.length > process.env.MAX_BLOG_TOPICS) {
-    return next(
-      new ErrorResponse(
-        `You can add topics for your blog up to ${process.env.MAX_BLOG_TOPICS}`,
-        400
-      )
-    );
-  }
+  // Add cover photo
 
   const blog = await Blog.create(req.body);
 
@@ -147,19 +114,28 @@ exports.deleteBlog = asyncHandler(async (req, res, next) => {
   });
 });
 
-// @desc      Search blogs by passing keyword in query
-// @path      GET /api/v1/blogs/search?q=keyword
+// @desc      Search blogs by passing keyword or tag name in query params
+// @path      GET /api/v1/blogs/search?keyword=keyword
+// @path      GET /api/v1/blogs/search?tag=tagName
 // @access    Public
 exports.searchBlogs = asyncHandler(async (req, res, next) => {
-  const keyword = req.query.q;
+  if (req.query.tag) {
+    const blogs = await Blog.find({ tags: req.query.tag });
 
-  const blogs = await Blog.find({ $text: { $search: keyword } });
+    return res.status(200).json({
+      status: true,
+      count: blogs.length,
+      data: blogs,
+    });
+  } else if (req.query.keyword) {
+    const blogs = await Blog.find({ $text: { $search: req.query.keyword } });
 
-  res.status(200).json({
-    status: true,
-    count: blogs.length,
-    data: blogs,
-  });
+    return res.status(200).json({
+      status: true,
+      count: blogs.length,
+      data: blogs,
+    });
+  }
 });
 
 // @desc      Blog photo upload
